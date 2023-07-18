@@ -1,0 +1,38 @@
+:root {
+  --background-base: #1d2236;
+  --background-highlight: #151926;
+  --background-grid-color:#252C45;
+
+  --element-background:#FFCF5420;
+  --element-border-hover-select:#FFCF54;
+
+  --text-color-main:#FFF;
+  --text-color-highlight: #FFCF54;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: var(--background-base);
+}
+body::-webkit-scrollbar{
+  display: none;
+}
+
+span {
+  color: --text-color-highlight;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
