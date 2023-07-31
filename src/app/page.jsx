@@ -1,20 +1,22 @@
 "use client";
+import BackgroundGrid from "@/components/Background/BackgroundGrid";
+import Heading from "@/components/Heading/Heading";
+import Introduction from "@/components/LandingSection/LandingSection";
 import { styled } from "styled-components";
 
-import BackgroundGrid from "@/components/Background/BackgroundGrid";
-
 const MainCore = styled.main`
-  height: 100%;
   width: 100vw;
-  position: relative;
   background-color: var(--background-base);
 `;
 
 export default function Home() {
   return (
     <MainCore>
-      <BackgroundGrid />
-
+      <Heading />
+      <section>
+        <BackgroundGrid />
+        <Introduction />
+      </section>
     </MainCore>
   );
 }

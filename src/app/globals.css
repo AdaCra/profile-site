@@ -1,13 +1,27 @@
 :root {
   --background-base: #1d2236;
   --background-highlight: #151926;
-  --background-grid-color:#252C45;
+  --background-grid-color: #252c45;
 
-  --element-background:#FFCF5420;
-  --element-border-hover-select:#FFCF54;
+  --element-background: #ffcf5420;
+  --element-border-hover-select: #ffcf54;
 
-  --text-color-main:#FFF;
-  --text-color-highlight: #FFCF54;
+  --text-color-main: #fff;
+  --text-color-highlight: #ffcf54;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("../fonts/Roboto_Mono/RobotoMono-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/Inter-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
 }
 
 * {
@@ -16,13 +30,11 @@
   margin: 0;
 }
 
-
-
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--background-base);
 }
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
   display: none;
 }
 
