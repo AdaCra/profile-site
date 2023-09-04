@@ -1,41 +1,62 @@
 import { styled } from "styled-components";
 import FactCarousel from "../FactCarousel/FactCarousel";
 import factlist from "../FactCarousel/FactList";
+import Image from "next/image";
+
+const IntroContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-items: spaced-between;
+`;
+
 const Sectional = styled.section`
   position: relative;
   z-index: 1;
-  margin: 0 10%;
+  margin: 200px 10%;
   padding: 0;
   width: 35%;
+  height: 90vh;
 `;
 
 const IntroBold = styled.p`
   position: relative;
-  padding: 200px 0 50px 0;
-
+  padding: 0 0 50px 0;
   z-index: 1;
   font-family: "Inter", Helvetica, sans-serif;
-  font-size: 2.5em;
+  font-size: 36px;
 `;
+
 const YellowTextEffect = styled.span`
   color: var(--element-border-hover-select);
 `;
+
 const IntroText = styled.p`
   position: relative;
   padding-top: 0;
   z-index: 1;
   font-family: "Roboto Mono", Helvetica, sans-serif;
-  font-size: 1.1em;
+  font-size: 16px;
 `;
 
-const SpacerDiv = styled.div`
-  height: 50%;
+const PhotoDiv = styled.section`
+  padding-top: 200px;
+  z-index: 1;
+  height: 100%;
+  width: 35%;
+  border-radius; 50%;
+  text-align: center;
 `;
+
+const ProfilePic = styled(Image)`
+  position: relative;
+  border-radius: 50%;
+  cursor: pointer;
+`;
+
 export default function Introduction() {
   return (
-    <Sectional>
-      <div></div>
-      <div>
+    <IntroContainer>
+      <Sectional>
         <IntroBold>
           Hi, I&apos;m Adam, a&nbsp;
           <YellowTextEffect>junior full-stack web developer</YellowTextEffect>
@@ -55,8 +76,17 @@ export default function Introduction() {
           every project.
         </IntroText>
         <FactCarousel facts={factlist} />
-      </div>
-      <SpacerDiv></SpacerDiv>
-    </Sectional>
+      </Sectional>
+      <PhotoDiv>
+        <ProfilePic
+          src="/HMF_4810.jpg"
+          alt="Profile Pic"
+          height={250}
+          width={250}
+          priority
+        />
+        
+      </PhotoDiv>
+    </IntroContainer>
   );
 }

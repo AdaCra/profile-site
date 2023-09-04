@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-const HeaderBar = styled.section`
+const HeaderBar = styled.nav`
   position: fixed;
   z-index: 2;
   top: 0;
@@ -20,15 +20,18 @@ const MenuItem = styled.li`
   cursor: pointer;
   list-style: none;
   vertical-align: middle;
-  padding: 15px 30px;
+  padding: 15px 25px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 16px;
   &:hover {
     color: var(--text-color-highlight);
+    text-shadow: 0 0 10px var(--element-text-hover-select);
   }
 `;
 const MenuButton = styled(MenuItem)`
   border: 2px solid var(--text-color-main);
   border-radius: 10px;
-  margin-left:25px;
+  margin-left: 25px;
   &:hover {
     background-color: var(--text-color-main);
     color: var(--background-highlight);
@@ -36,10 +39,17 @@ const MenuButton = styled(MenuItem)`
   }
 `;
 
+const MenuTitle = styled.h1`
+  cursor: pointer;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  margin-top: 25px;
+`;
+
 export default function Heading() {
   return (
     <HeaderBar>
-      <h1>Adam Hannath</h1>
+      <MenuTitle>Adam Hannath</MenuTitle>
       <Menu>
         <MenuItem>About</MenuItem>
         <MenuItem>Projects</MenuItem>
