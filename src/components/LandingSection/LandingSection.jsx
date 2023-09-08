@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
-import FactCarousel from "../FactCarousel/FactCarousel";
-import factlist from "../FactCarousel/FactList";
-import Image from "next/image";
+import IntroSummary from "./IntroSummary";
+import IntroPhoto from "./IntroPhoto";
 
 const IntroContainer = styled.div`
   display: flex;
@@ -9,84 +8,11 @@ const IntroContainer = styled.div`
   justify-items: spaced-between;
 `;
 
-const Sectional = styled.section`
-  position: relative;
-  z-index: 1;
-  margin: 200px 10%;
-  padding: 0;
-  width: 35%;
-  height: 90vh;
-`;
-
-const IntroBold = styled.p`
-  position: relative;
-  padding: 0 0 50px 0;
-  z-index: 1;
-  font-family: "Inter", Helvetica, sans-serif;
-  font-size: 36px;
-`;
-
-const YellowTextEffect = styled.span`
-  color: var(--element-border-hover-select);
-`;
-
-const IntroText = styled.p`
-  position: relative;
-  padding-top: 0;
-  z-index: 1;
-  font-family: "Roboto Mono", Helvetica, sans-serif;
-  font-size: 16px;
-`;
-
-const PhotoDiv = styled.section`
-  padding-top: 200px;
-  z-index: 1;
-  height: 100%;
-  width: 35%;
-  border-radius; 50%;
-  text-align: center;
-`;
-
-const ProfilePic = styled(Image)`
-  position: relative;
-  border-radius: 50%;
-  cursor: pointer;
-`;
-
 export default function Introduction() {
   return (
     <IntroContainer>
-      <Sectional>
-        <IntroBold>
-          Hi, I&apos;m Adam, a&nbsp;
-          <YellowTextEffect>junior full-stack web developer</YellowTextEffect>
-          &nbsp;with a passion for creating innovative solutions.
-        </IntroBold>
-        <IntroText>
-          After transitioning from a 15-year career in architecture, I completed
-          coding bootcamps in Berlin and now specialize in developing clean and
-          user-friendly web applications.
-        </IntroText>
-        <br />
-        <IntroText>
-          Currently, I&apos;m working on a project for a tour company, where I
-          create software to manage their vehicles and improve customer
-          experiences. With a passion for staying up-to-date with the latest web
-          development trends and technologies, I bring a fresh perspective to
-          every project.
-        </IntroText>
-        <FactCarousel facts={factlist} />
-      </Sectional>
-      <PhotoDiv>
-        <ProfilePic
-          src="/HMF_4810.jpg"
-          alt="Profile Pic"
-          height={250}
-          width={250}
-          priority
-        />
-        
-      </PhotoDiv>
+      <IntroSummary />
+      <IntroPhoto />
     </IntroContainer>
   );
 }

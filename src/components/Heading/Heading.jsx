@@ -19,8 +19,9 @@ const Menu = styled.ul`
 const MenuItem = styled.li`
   cursor: pointer;
   list-style: none;
-  vertical-align: middle;
-  padding: 15px 25px;
+
+  width: 150px;
+  padding: 15px 15px;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 16px;
   &:hover {
@@ -44,6 +45,7 @@ const MenuTitle = styled.h1`
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 18px;
   margin-top: 25px;
+  height: 50px;
 `;
 
 export default function Heading() {
