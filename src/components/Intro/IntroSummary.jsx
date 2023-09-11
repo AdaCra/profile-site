@@ -44,7 +44,7 @@ export default function IntroSummary() {
           &nbsp;with a passion for creating innovative solutions.
         </IntroBold>
         <IntroText>
-          After transitioning from a 15-year career in architecture, I completed
+          After transitioning from a 15-year career in architecture, I completed two
           coding bootcamps in Berlin and now specialize in developing clean and
           user-friendly web applications.
         </IntroText>

@@ -5,7 +5,7 @@ const HeaderBar = styled.nav`
   position: ${({ $isScrollingDown }) =>
     $isScrollingDown === "true" ? "absolute" : "fixed"};
   background-color: var(--background-highlight);
-  z-index: 2;
+  z-index: 4;
   top: 0;
   padding: 0 10%;
   width: 100vw;

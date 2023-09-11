@@ -1,5 +1,7 @@
 "use client";
 import BackgroundGrid from "@/components/Background/BackgroundGrid";
+import ContactBar from "@/components/ContactBar/ContactBar";
+import Footer from "@/components/Footer/Footer";
 import Heading from "@/components/Heading/Heading";
 import Introduction from "@/components/LandingSection/LandingSection";
 import ProjectGrid from "@/components/Portfolio/ProjectGrid";
@@ -12,11 +14,15 @@ const MainCore = styled.main`
 
 export default function Home() {
   return (
-    <MainCore>
+    <>
       <Heading />
-      <BackgroundGrid />
+      <MainCore>
+        <BackgroundGrid />
         <Introduction />
         <ProjectGrid />
-    </MainCore>
+        <ContactBar />
+      </MainCore>
+      <Footer />
+    </>
   );
 }
