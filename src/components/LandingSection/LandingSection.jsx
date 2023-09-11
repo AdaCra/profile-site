@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
-import IntroSummary from "./IntroSummary";
-import IntroPhoto from "./IntroPhoto";
+import IntroSummary from "../Intro/IntroSummary";
+import IntroPhoto from "../Intro/IntroPhoto";
 
 const IntroContainer = styled.div`
   display: flex;

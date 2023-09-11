@@ -31,6 +31,22 @@
   margin: 0;
 }
 
+h2 {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+h3 {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--background-base);
@@ -47,6 +63,10 @@ span {
 p {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 16px;
+}
+
+hr {
+  opacity: 0;
 }
 
 @media (prefers-color-scheme: dark) {

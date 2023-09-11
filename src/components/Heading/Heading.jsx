@@ -1,10 +1,13 @@
+import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 
 const HeaderBar = styled.nav`
-  position: fixed;
+  position: ${({ $isScrollingDown }) =>
+    $isScrollingDown === "true" ? "absolute" : "fixed"};
+  background-color: var(--background-highlight);
   z-index: 2;
   top: 0;
-  padding: 2% 10%;
+  padding: 0 10%;
   width: 100vw;
   display: flex;
   justify-content: space-between;
@@ -28,6 +31,11 @@ const MenuItem = styled.li`
     color: var(--text-color-highlight);
     text-shadow: 0 0 10px var(--element-text-hover-select);
   }
+
+  a {
+    text-decoration: none;
+    color: var(--text-color-main);
+  }
 `;
 const MenuButton = styled(MenuItem)`
   border: 2px solid var(--text-color-main);
@@ -49,12 +57,34 @@ const MenuTitle = styled.h1`
 `;
 
 export default function Heading() {
+  const [isScrollingDown, setIsScrollingDown] = useState(false);
+
+  const handleScroll = (e) => {
+    if (e.deltaY > 0) {
+      setIsScrollingDown(true);
+    } else if (e.deltaY < 0) {
+      setIsScrollingDown(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("wheel", handleScroll);
+
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+    };
+  }, []);
+
   return (
-    <HeaderBar>
+    <HeaderBar $isScrollingDown={isScrollingDown.toString()}>
       <MenuTitle>Adam Hannath</MenuTitle>
       <Menu>
-        <MenuItem>About</MenuItem>
-        <MenuItem>Projects</MenuItem>
+        <MenuItem>
+          <a href="#about">About</a>
+        </MenuItem>
+        <MenuItem>
+          <a href="#projects">Projects</a>
+        </MenuItem>
         <MenuButton>Contact Me</MenuButton>
       </Menu>
     </HeaderBar>
