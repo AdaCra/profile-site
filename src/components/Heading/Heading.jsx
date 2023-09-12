@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { styled } from "styled-components";
+import { copyToClipboard } from "../ContactBar/ContactEmail";
 
 const HeaderBar = styled.nav`
   position: ${({ $isScrollingDown }) =>
@@ -45,6 +46,10 @@ const MenuButton = styled(MenuItem)`
     background-color: var(--text-color-main);
     color: var(--background-highlight);
     box-shadow: 0 0 25px var(--element-border-hover-select);
+    a {
+      text-decoration: none;
+      color: var(--background-highlight);
+    }
   }
 `;
 
@@ -85,7 +90,16 @@ export default function Heading() {
         <MenuItem>
           <a href="#projects">Projects</a>
         </MenuItem>
-        <MenuButton>Contact Me</MenuButton>
+        <MenuButton>
+          <a
+            href="mailto:ahannath.portfoliosite@gmail.com?subject=Portfolio%20Website%20Contact%20Email&body=(Enter%20your%20message%20here)"
+            onClick={() => {
+              copyToClipboard();
+            }}
+          >
+            Contact Me
+          </a>
+        </MenuButton>
       </Menu>
     </HeaderBar>
   );

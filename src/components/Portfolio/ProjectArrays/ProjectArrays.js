@@ -29,7 +29,7 @@ export const SecondProjects = [
   {
     title: "Gallery App",
     summary:
-      "An app designed with retrieve and display weather data fetched from an external API.",
+      "External API Art piece data shown on a flexible viewing site with favourites.",
     imageHref: "/HMF_4810.jpg",
     stack: ["MongoDB", "Express.JS", "NextJS", "Node.JS"],
     url: "",

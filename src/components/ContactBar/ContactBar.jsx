@@ -1,5 +1,7 @@
 import Image from "next/image";
+import React from "react";
 import { styled } from "styled-components";
+import { copyToClipboard } from "./ContactEmail";
 
 const ContactsWrapper = styled.div`
   margin: auto;
@@ -9,9 +11,11 @@ const ContactsWrapper = styled.div`
   justify-content: space-between;
 `;
 export default function ContactBar() {
+  
+
   return (
     <ContactsWrapper>
-      <a href="https://github.com/AdaCra">
+      <a href="https://github.com/AdaCra" target="_blank">
         <Image
           src="/gitcat.png"
           alt="GitHub Profile"
@@ -20,7 +24,7 @@ export default function ContactBar() {
           priority
         />
       </a>
-      <a href="https://www.linkedin.com/in/adam-hannath/">
+      <a href="https://www.linkedin.com/in/adam-hannath/" target="_blank">
         <Image
           src="/linkedin.png"
           alt="LinkedIn Profile"
@@ -29,7 +33,7 @@ export default function ContactBar() {
           priority
         />
       </a>
-      <a href="https://www.xing.com/profile/Adam_Hannath/cv">
+      <a href="https://www.xing.com/profile/Adam_Hannath/cv" target="_blank">
         <Image
           src="/xing.png"
           alt="Xing Profile"
@@ -38,7 +42,13 @@ export default function ContactBar() {
           priority
         />
       </a>
-      <a href="mailto:ahannath.portfoliosite@gmail.com">
+      <a
+        href="mailto:ahannath.portfoliosite@gmail.com?subject=Portfolio%20Website%20Contact%20Email&body=(Enter%20your%20message%20here)"
+        target="_blank"
+        onClick={() => {
+          copyToClipboard();
+        }}
+      >
         <Image
           src="/email.png"
           alt="Xing Profile"
@@ -47,7 +57,7 @@ export default function ContactBar() {
           priority
         />
       </a>
-      <a href="/Adam Hannath - CV.pdf">
+      <a href="/Adam Hannath - CV.pdf" target="_blank">
         <Image
           src="/resume.png"
           alt="Xing Profile"
