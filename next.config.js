@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // reactStrictMode destroys the carousel
   compiler: {
     styledComponents: true,
   },

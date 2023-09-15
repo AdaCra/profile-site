@@ -10,7 +10,6 @@ const Sectional = styled.section`
   margin-right: 5%;
   padding: 0;
   width: 35%;
-  height: 80vh;
 `;
 
 const IntroBold = styled.p`
@@ -44,9 +43,9 @@ export default function IntroSummary() {
           &nbsp;with a passion for creating innovative solutions.
         </IntroBold>
         <IntroText>
-          After transitioning from a 15-year career in architecture, I completed two
-          coding bootcamps in Berlin and now specialize in developing clean and
-          user-friendly web applications.
+          After transitioning from a 15-year career in architecture, I completed
+          two coding bootcamps in Berlin and now specialize in developing clean
+          and user-friendly web applications.
         </IntroText>
         <br />
         <IntroText>
