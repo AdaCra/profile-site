@@ -5,6 +5,7 @@ const GridStructure = styled.div`
   display: grid;
   grid-template-columns: 0.2fr 0.001fr repeat(5, 1fr 0.001fr) 0.2fr;
   height: 100vh;
+  height-max: 1100px;
   width: 100vw;
   background-color: var(--background-base);
   z-index: 0;

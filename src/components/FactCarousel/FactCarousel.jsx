@@ -8,7 +8,7 @@ const FactDiv = styled.div`
   vertical-align: middle;
 `;
 const FactP = styled.p`
-  margin-top: 50px;
+  margin-top: 30px;
   padding: 5px;
   min-width: 0;
   color: var(--text-color-highlight);
@@ -17,7 +17,12 @@ const FactP = styled.p`
   border-radius: 5px;
   line-height: 30px;
   text-align: center;
+  font-family: "Roboto Mono", Helvetica, sans-serif;
+  font-size: 16px;
   opacity: ${(props) => props.$showCursor}) ? 1 : 0;
+  @media (max-width: 799px) {
+    font-size: 14px;
+  }
 `;
 export default function FactCarousel({ facts }) {
   const [currentFactIndex, setCurrentFactIndex] = useState(0);

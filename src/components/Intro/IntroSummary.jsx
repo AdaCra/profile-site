@@ -6,10 +6,15 @@ const Sectional = styled.section`
   position: relative;
   z-index: 1;
   margin-top: 200px;
-  margin-left: 10%;
-  margin-right: 5%;
+  margin-left: 10vw;
+  margin-right: 5vw;
   padding: 0;
-  width: 35%;
+  width: 35vw;
+  @media (max-width: 799px) {
+    margin-top: 100px;
+    width: 80vw;
+    margin-right: 10vw;
+  }
 `;
 
 const IntroBold = styled.p`
@@ -18,6 +23,11 @@ const IntroBold = styled.p`
   z-index: 1;
   font-family: "Inter", Helvetica, sans-serif;
   font-size: 36px;
+  @media (max-width: 799px) {
+    font-size: 25px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
 `;
 
 const YellowTextEffect = styled.span`
@@ -30,6 +40,10 @@ const IntroText = styled.p`
   z-index: 1;
   font-family: "Roboto Mono", Helvetica, sans-serif;
   font-size: 16px;
+  @media (max-width: 799px) {
+    font-size: 14px;
+    text-align: center;
+  }
 `;
 
 export default function IntroSummary() {

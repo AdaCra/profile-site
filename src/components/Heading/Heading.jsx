@@ -19,6 +19,9 @@ const Menu = styled.ul`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  @media (max-width: 799px) {
+    display: none;
+  }
 `;
 const MenuItem = styled.li`
   cursor: pointer;
@@ -28,6 +31,7 @@ const MenuItem = styled.li`
   padding: 15px 15px;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 16px;
+
   &:hover {
     color: var(--text-color-highlight);
     text-shadow: 0 0 10px var(--element-text-hover-select);

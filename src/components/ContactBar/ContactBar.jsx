@@ -6,13 +6,13 @@ import { copyToClipboard } from "./ContactEmail";
 const ContactsWrapper = styled.div`
   margin: auto;
   display: flex;
-  gap: 1em;
-  width: 400px;
+  width: 80vw;
   justify-content: space-between;
+  @media (max-width: 350px) {
+    flex-wrap: wrap;
+  }
 `;
 export default function ContactBar() {
-  
-
   return (
     <ContactsWrapper>
       <a href="https://github.com/AdaCra" target="_blank">

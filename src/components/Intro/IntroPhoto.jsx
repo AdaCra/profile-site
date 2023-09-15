@@ -3,7 +3,12 @@ import { useState } from "react";
 import { styled } from "styled-components";
 
 const PhotoBlock = styled.div`
-  width: 35%;
+  width: 35vw;
+  min-width: 265px;
+  @media (max-width: 799px) {
+    width: 80vw;
+    margin: 0 auto;
+  }
 `;
 const PhotoDiv = styled.section`
   postion: relative;
@@ -15,8 +20,11 @@ const PhotoDiv = styled.section`
   height: 300px;
   border-radius; 50%;
   text-align: right;
-  z-index: 2;
-
+  min-width: 265px;
+  @media (max-width: 799px) {
+    margin: 100px auto 0;
+    text-align: center;
+  }
 `;
 
 const ProfilePic = styled(Image)`
@@ -53,7 +61,7 @@ const HandWave = styled(Image)`
   z-index: 3;
   right: 50px;
   top: -230px;
-  transform: translate(-240%, -50%);
+  transform: translate(-250%, -50%);
   transform-origin: bottom right;
   opacity: ${({ $showAnimation }) => ($showAnimation === "true" ? "1" : "0")};
   transition: opacity 0.5s ease-in-out;
@@ -62,25 +70,28 @@ const HandWave = styled(Image)`
   &:hover {
     animation: highFive 0.5s linear forwards;
     transition: opacity 0.3s ease-in-out;
-    transform: translate(-260%, -50%) rotate(45deg);
+    transform: translate(-360%, 40%) rotate(45deg);
   }
   @keyframes highFive {
     0%,
     100% {
-      transform: translate(-260%, -50%) rotate(45deg) scale(1);
+      transform: translate(-255%, -60%) rotate(45deg) scale(1);
     }
     50% {
-      transform: translate(-260%, -50%) rotate(45deg) scale(1.2);
+      transform: translate(-255%, -60%) rotate(45deg) scale(1.2);
     }
   }
   @keyframes wave {
     0%,
     100% {
-      transform: translate(-230%, -50%) rotate(-20deg);
+      transform: translate(-250%, -50%) rotate(-20deg);
     }
     50% {
       transform: translate(-250%, -50%) rotate(20deg);
     }
+  }
+  @media (max-width: 799px) {
+    display: none;
   }
 `;
 
@@ -94,18 +105,27 @@ const HireButton = styled.button`
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.65);
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 16px;
-  transform: translate(-200%, -370%) rotate(45deg);
+  transform: translate(-210%, -195%) rotate(45deg);
   cursor: pointer;
   transition: opacity 0.3s ease-in-out;
+  opacity: ${({ $showAnimation }) => ($showAnimation === "true" ? "1" : "0")};
   animation: ${({ $showAnimation }) =>
-    $showAnimation === "true" ? "hireMeSwing 1s linear forwards" : "none"};
+    $showAnimation === "true" ? "hireMeSwing 0.75s linear forwards" : "none"};
   @keyframes hireMeSwing {
     0% {
-      transform: translate(-200%, -370%) rotate(45deg);
+      transform: translate(-210%, -195%) rotate(45deg);
     }
     100% {
-      transform: translate(-250%, -250%) rotate(45deg);
+      transform: translate(-250%, -110%) rotate(45deg);
     }
+  }
+  @media (max-width: 799px) {
+    z-index: 10;
+    margin: 0 auto;
+    padding: 10px 15px;
+    width: 25vw;
+    animation: none;
+    transform: translate(-50%, -100%) rotate(0deg);
   }
 `;
 
@@ -133,6 +153,7 @@ export default function IntroPhoto() {
         />
         <div>
           <HandWave
+            className="Hand"
             $showAnimation={showAnimation.toString()}
             src="/handwave.png"
             alt="handwave"
@@ -140,12 +161,15 @@ export default function IntroPhoto() {
             width={68}
             priority
           />
+          <HireButton
+            className="Buttons"
+            $showAnimation={showAnimation.toString()}
+          >
+            <DownloadLink href="/Adam Hannath - CV.pdf" download>
+              for hire!
+            </DownloadLink>
+          </HireButton>
         </div>
-        <HireButton $showAnimation={showAnimation.toString()}>
-          <DownloadLink href="/Adam Hannath - CV.pdf" download>
-            for hire!
-          </DownloadLink>
-        </HireButton>
       </PhotoDiv>
     </PhotoBlock>
   );
