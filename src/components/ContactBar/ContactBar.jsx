@@ -51,7 +51,7 @@ export default function ContactBar() {
       >
         <Image
           src="/email.png"
-          alt="Xing Profile"
+          alt="Email"
           width={50}
           height={50}
           priority
@@ -60,7 +60,7 @@ export default function ContactBar() {
       <a href="/Adam Hannath - CV.pdf" target="_blank">
         <Image
           src="/resume.png"
-          alt="Xing Profile"
+          alt="Download Resume"
           width={50}
           height={50}
           priority
