@@ -5,10 +5,12 @@ import { copyToClipboard } from "./ContactEmail";
 
 const ContactsWrapper = styled.div`
   margin: auto;
-  display: flex;
   width: 80vw;
-  justify-content: space-between;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
   @media (max-width: 350px) {
+    gap: 50px;
     flex-wrap: wrap;
   }
 `;
@@ -49,15 +51,9 @@ export default function ContactBar() {
           copyToClipboard();
         }}
       >
-        <Image
-          src="/email.png"
-          alt="Email"
-          width={50}
-          height={50}
-          priority
-        />
+        <Image src="/email.png" alt="Email" width={50} height={50} priority />
       </a>
-      <a href="/Adam Hannath - CV.pdf" target="_blank">
+      <a href="/AH-CV_web-23.pdf" target="_blank">
         <Image
           src="/resume.png"
           alt="Download Resume"

@@ -14,7 +14,7 @@ const PortfolioImageDiv = styled.section`
   }
 `;
 const PortfolioImageWrapper = styled.div`
-  padding: 35px;
+  padding: 10%;
   width: 100%;
   height: 100%;
   position: relative;
@@ -35,6 +35,8 @@ const SummaryP = styled.p`
   z-index: 1;
   font-family: "Roboto Mono", Helvetica, sans-serif;
   font-size: 16px;
+ 
+  
 `;
 
 export default function ProjectIcon({ Title, Summary, HRef, Stack }) {
