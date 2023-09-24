@@ -35,7 +35,19 @@ const SummaryP = styled.p`
   z-index: 1;
   font-family: "Roboto Mono", Helvetica, sans-serif;
   font-size: 16px;
- 
+  height: "";
+  @media (max-width: 1630px) {
+    height: 65px;
+  }
+  @media (max-width: 1135px) {
+    height: 87px;
+  }
+  @media (max-width: 880px) {
+    height: 107px;
+  }
+  @media (max-width: 799px) {
+    height: "";
+  }
   
 `;
 
