@@ -8,12 +8,12 @@ export const MainProjects = [
     url: "",
   },
   {
-    title: "Iron Cinema App",
+    title: "Gallery App",
     summary:
-      "An application to set up management of movie showings, and customer booking of movie tickets",
+      "External API Art piece data shown on a flexible viewing site with favourites.",
     imageHref: "/HMF_4810.jpg",
-    stack: ["MongoDB", "Express.JS", "React", "Node.JS"],
-    url: "",
+    stack: ["MongoDB", "Express.JS", "NextJS", "Node.JS"],
+    url: "https://art-gallery-app-tegv.vercel.app/",
   },
 ];
 
@@ -27,17 +27,17 @@ export const SecondProjects = [
     url: "",
   },
   {
-    title: "Gallery App",
-    summary:
-      "External API Art piece data shown on a flexible viewing site with favourites.",
-    imageHref: "/HMF_4810.jpg",
-    stack: ["MongoDB", "Express.JS", "NextJS", "Node.JS"],
-    url: "",
-  },
-  {
     title: "Weather App",
     summary:
       "An app designed with retrieve and display weather data fetched from an external API.",
+    imageHref: "/HMF_4810.jpg",
+    stack: ["MongoDB", "Express.JS", "React", "Node.JS"],
+    url: "",
+  },
+  {
+    title: "Iron Cinema App",
+    summary:
+      "An application to set up of movie showings, and customer booking of movie tickets.",
     imageHref: "/HMF_4810.jpg",
     stack: ["MongoDB", "Express.JS", "React", "Node.JS"],
     url: "",

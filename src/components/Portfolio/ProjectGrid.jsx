@@ -1,6 +1,8 @@
 import { styled } from "styled-components";
 import ProjectIcon from "./ProjectIcon/ProjectIcon";
 import { MainProjects, SecondProjects } from "./ProjectArrays/ProjectArrays";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Portfolio = styled.section`
   position: relative;
@@ -43,7 +45,11 @@ const Dividerhr = styled.hr`
   }
 `;
 export default function ProjectGrid() {
-  const bob = [1, 2, 3, 4, 5];
+  const router = useRouter();
+  const handleClickRouting = (url) => {
+    router.push(url);
+  };
+
   return (
     <div>
       <Portfolio>
@@ -52,13 +58,14 @@ export default function ProjectGrid() {
         <MainProjectSection>
           {MainProjects.map((project, id) => {
             return (
-              <ProjectIcon
-                Title={project.title}
-                Summary={project.summary}
-                HRef={project.imageHref}
-                Stack={project.stack}
-                key={id}
-              />
+              <Link href={project.url} key={id}>
+                <ProjectIcon
+                  Title={project.title}
+                  Summary={project.summary}
+                  HRef={project.imageHref}
+                  Stack={project.stack}
+                />
+              </Link>
             );
           })}
         </MainProjectSection>
