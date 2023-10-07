@@ -5,7 +5,7 @@ export const MainProjects = [
       "An app designed in to be used by an existing company in order to manage a fleet of cars.",
     imageHref: "/HMF_4810.jpg",
     stack: ["MongoDB", "Express.JS", "NextJS", "Node.JS"],
-    url: "",
+    url: "https://hotrod-management-app.vercel.app/",
   },
   {
     title: "Gallery App",
@@ -40,6 +40,6 @@ export const SecondProjects = [
       "An application to set up of movie showings, and customer booking of movie tickets.",
     imageHref: "/HMF_4810.jpg",
     stack: ["MongoDB", "Express.JS", "React", "Node.JS"],
-    url: "",
+    url: "https://ironcinema.cyclic.app/",
   },
 ];
