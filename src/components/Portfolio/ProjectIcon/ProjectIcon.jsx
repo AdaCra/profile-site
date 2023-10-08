@@ -6,26 +6,34 @@ const PortfolioImageDiv = styled.section`
   padding: 0;
   width: 100%;
   border-radius: 10px;
+  cursor: pointer;
   background-color: var(--element-background);
   border: 2px solid var(--text-color-highlight);
 
+  /* Use the & selector for the hover effect */
   &:hover {
     background-color: var(--element-background-hover);
   }
+
+  @media (max-width: 799px) {
+    margin-bottom: 50px;
+  }
 `;
+
 const PortfolioImageWrapper = styled.div`
   padding: 10%;
   width: 100%;
   height: 100%;
   position: relative;
   text-align: center;
+  &:hover {
+    background-color: var(--element-background-hover);
+  }
 `;
 
 const ProjectImage = styled(Image)`
-  width: 100%;
-  height: 100%;
   position: relative !important;
-  object-fit: cover;
+  object-fit: contain;
 `;
 
 const SummaryP = styled.p`
@@ -46,19 +54,26 @@ const SummaryP = styled.p`
     height: 107px;
   }
   @media (max-width: 799px) {
-    height: "";
+    height: 50px;
   }
-  
 `;
 
-export default function ProjectIcon({ Title, Summary, HRef, Stack }) {
+export default function ProjectIcon({ Title, Summary, HRef, Stack, URL }) {
+  const handleClick = () => {
+    window.open(URL, "_blank");
+  };
   return (
     <section>
       <h3>{Title}</h3>
       <SummaryP>{Summary}</SummaryP>
-      <PortfolioImageDiv>
+      <PortfolioImageDiv onClick={handleClick}>
         <PortfolioImageWrapper>
-          <ProjectImage src={HRef} alt={Title} layout="fill" />
+          <ProjectImage
+            src={HRef}
+            alt={Title}
+            fill
+            sizes="(min-width: 10000px) 30vw,(max-width: 799px) 64vw"
+          />
         </PortfolioImageWrapper>
       </PortfolioImageDiv>
     </section>

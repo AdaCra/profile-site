@@ -68,6 +68,8 @@ const HandWave = styled(Image)`
   animation: ${({ $showAnimation }) =>
     $showAnimation === "true" ? "wave 0.5s infinite" : "none"};
   &:hover {
+    right: 70px;
+    top: -210px;
     animation: highFive 0.5s linear forwards;
     transition: opacity 0.3s ease-in-out;
     transform: translate(-360%, 40%) rotate(45deg);
@@ -145,7 +147,7 @@ export default function IntroPhoto() {
       >
         <ProfilePic
           $showAnimation={showAnimation.toString()}
-          src="/HMF_4810.jpg"
+          src="/HMF_4810_small.webp"
           alt="Profile Pic"
           height={265}
           width={265}

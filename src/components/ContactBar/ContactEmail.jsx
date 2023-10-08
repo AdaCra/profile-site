@@ -17,5 +17,5 @@ export const copyToClipboard = () => {
   document.body.removeChild(tempInput);
 
   // Alert the user that the email has been copied
-  alert("Email has been copied to the clipboard");
+  alert("My Email Address has been copied to your clipboard for convenience.");
 };

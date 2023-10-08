@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import FactCarousel from "../FactCarousel/FactCarousel";
-import factlist from "../FactCarousel/FactList";
+import factList from "../FactCarousel/FactList";
 
 const Sectional = styled.section`
   position: relative;
@@ -58,7 +58,7 @@ export default function IntroSummary() {
         </IntroBold>
         <IntroText>
           After transitioning from a 15-year career in architecture, I completed
-          two coding bootcamps in Berlin and now specialize in developing clean
+          two coding boot camps in Berlin and now specialize in developing clean
           and user-friendly web applications.
         </IntroText>
         <br />
@@ -69,7 +69,7 @@ export default function IntroSummary() {
           development trends and technologies, I bring a fresh perspective to
           every project.
         </IntroText>
-        <FactCarousel facts={factlist} />
+        <FactCarousel facts={factList} />
       </Sectional>
     </>
   );

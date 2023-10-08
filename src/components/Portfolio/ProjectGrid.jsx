@@ -1,19 +1,18 @@
 import { styled } from "styled-components";
 import ProjectIcon from "./ProjectIcon/ProjectIcon";
 import { MainProjects, SecondProjects } from "./ProjectArrays/ProjectArrays";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
 
 const Portfolio = styled.section`
   position: relative;
   margin: 0 10% 100px 10%;
   width: 80vw;
+
   @media (max-width: 799px) {
     margin: 0 auto 50px;
   }
 `;
 const MainProjectSection = styled.section`
-  margin-top: 100px;
+  margin-top: 60px;
   display: flex;
   justify-content: space-between;
   gap: 3em;
@@ -44,12 +43,8 @@ const Dividerhr = styled.hr`
     margin-bottom: 40px;
   }
 `;
-export default function ProjectGrid() {
-  const router = useRouter();
-  const handleClickRouting = (url) => {
-    router.push(url);
-  };
 
+export default function ProjectGrid() {
   return (
     <div>
       <Portfolio>
@@ -58,14 +53,14 @@ export default function ProjectGrid() {
         <MainProjectSection>
           {MainProjects.map((project, id) => {
             return (
-              <Link href={project.url} key={id}>
-                <ProjectIcon
-                  Title={project.title}
-                  Summary={project.summary}
-                  HRef={project.imageHref}
-                  Stack={project.stack}
-                />
-              </Link>
+              <ProjectIcon
+                Title={project.title}
+                Summary={project.summary}
+                HRef={project.imageHref}
+                Stack={project.stack}
+                URL={project.url}
+                key={id}
+              />
             );
           })}
         </MainProjectSection>
@@ -77,6 +72,7 @@ export default function ProjectGrid() {
                 Summary={project.summary}
                 HRef={project.imageHref}
                 Stack={project.stack}
+                URL={project.url}
                 key={id}
               />
             );
