@@ -9,7 +9,7 @@ const ContactsWrapper = styled.div`
   display: flex;
   justify-content: center;
   gap: 50px;
-  @media (max-width: 350px) {
+  @media (max-width: 400px) {
     gap: 50px;
     flex-wrap: wrap;
   }
