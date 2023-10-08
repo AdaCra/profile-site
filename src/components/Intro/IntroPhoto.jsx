@@ -167,7 +167,7 @@ export default function IntroPhoto() {
             className="Buttons"
             $showAnimation={showAnimation.toString()}
           >
-            <DownloadLink href="/Adam Hannath - CV.pdf" download>
+            <DownloadLink href="/AH-CV_web-23.pdf" download>
               for hire!
             </DownloadLink>
           </HireButton>
