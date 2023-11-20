@@ -1,5 +1,7 @@
+`use client`;
 
 import "./globals.css";
+import StyledComponentsRegistry from "./registry";
 
 export const metadata = {
   title: "Portfolio of AH ",
@@ -9,7 +11,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body style={{ position: "relative" }}>{children}</body>
+      <StyledComponentsRegistry>
+        <body style={{ position: "relative" }}>{children}</body>
+      </StyledComponentsRegistry>
     </html>
   );
 }
