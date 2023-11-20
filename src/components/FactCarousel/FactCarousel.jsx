@@ -19,19 +19,21 @@ const FactP = styled.p`
   text-align: center;
   font-family: "Roboto Mono", Helvetica, sans-serif;
   font-size: 16px;
-  opacity: ${(props) => props.$showCursor}) ? 1 : 0;
   @media (max-width: 799px) {
     font-size: 14px;
   }
 `;
 export default function FactCarousel({ facts }) {
+  // State variables for managing the displayed fact, current fact index, and cursor visibility
   const [currentFactIndex, setCurrentFactIndex] = useState(0);
   const [displayedFact, setDisplayedFact] = useState("");
   const [showCursor, setShowCursor] = useState(true);
 
+  // useEffect hook to handle the typing effect and cursor blinking
   useEffect(() => {
     let interval;
 
+    // Function to simulate typing effect for a given fact
     const typeFact = (fact) => {
       let currentCharIndex = 0;
 
@@ -39,12 +41,14 @@ export default function FactCarousel({ facts }) {
         setDisplayedFact((prevDisplayedFact) => {
           if (currentCharIndex >= fact.length) {
             clearInterval(interval);
+
+            // After typing, wait x before moving to the next fact
             setTimeout(() => {
               setCurrentFactIndex(
                 (prevIndex) => (prevIndex + 1) % facts.length
               );
               setDisplayedFact("");
-            }, 2000); // Wait for 2 seconds before moving to the next fact.
+            }, 2000); // 2000 milliseconds = 2 seconds .
             return prevDisplayedFact;
           }
 
@@ -53,12 +57,15 @@ export default function FactCarousel({ facts }) {
       }, 50); // Adjust typing speed by changing the interval value (milliseconds).
     };
 
+    // Initial typing for the first fact
     typeFact(facts[currentFactIndex]);
 
+    // Interval for controlling the blinking rate of the cursor
     const cursorInterval = setInterval(() => {
       setShowCursor((prevShowCursor) => !prevShowCursor);
-    }, 500); // Controls the blinking rate of the cursor.
+    }, 500); // 500 milliseconds = 0.5 seconds I.E. 1 on/off cycle per second.
 
+    // Cleanup function to clear intervals when the component unmounts
     return () => {
       clearInterval(interval);
       clearInterval(cursorInterval);
